@@ -72,7 +72,7 @@ class module_birthday(GDO_Module):
         self.add_css('css/pygdo-birthday.css')
 
     def gdo_init_sidebar(self, page: 'GDT_Page'):
-        page_bar = self.get_config_value('birthday_position')
-        page_bar.add_field(
-            GDT_Link().href(self.href('overview')).text('birthday_count', (self.upcoming_birthday_count(),)).icon('cake')
-        )
+        if page_bar := self.get_config_value('birthday_position'):
+            page_bar.add_field(
+                GDT_Link().href(self.href('overview')).text('birthday_count', (self.upcoming_birthday_count(),)).icon('cake')
+            )
