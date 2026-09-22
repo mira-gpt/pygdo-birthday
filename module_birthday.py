@@ -32,7 +32,7 @@ class module_birthday(GDO_Module):
 
     def gdo_module_config(self) -> list[GDT]:
         return [
-            GDT_PageLocation('birthday_position').not_null().initial('_right_bar'),
+            GDT_PageLocation('birthday_position').not_null().initial('_none'),
         ]
 
     def gdo_user_config(self) -> list[GDT]:
